@@ -1,0 +1,33 @@
+.home,
+.favorites,
+.hermits,
+.seasons,
+.donate,
+.signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.hermits h2 {
+  color: black !important;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 479px) {
+  body {
+    font-size: 12px;
+  }
+}

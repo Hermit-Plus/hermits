@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Teko:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #627327;
+  --primary-light-color: #96a61c;
+  --primary-dark-color: #30402c;
+  --secondary-color: #4c592e;
+  --secondary-light-color: #bfb26f;
+  --light-yellow: #f5d340;
+  --dark-yellow: #efc200;
+  --light-green: #498b00;
+  --dark-green: #366600;
+  --light-blue: #57b0c3;
+  --red: #ff0f00;
+  --smoke: #444444;
+  --burnt: #2f2f2f;
+  --text-main: #f9f9f9;
+  --text-dark: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Teko', sans-serif;
+}
+
+p {
+  font-family: 'Kanit', sans-serif;
+  font-size: 18px;
+}

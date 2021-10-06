@@ -1,0 +1,165 @@
+/** referenced https://github.com/mtajammulzia/responsive-navbar-sidebar */
+/*! set side bar to fixed and commented out the toggle. The toggle needs to be removed but keep current functionality. **/
+
+.navbar {
+  height: 10vh;
+  background: var(--secondary-color);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-img {
+  margin-left: 10%;
+  width: 40%;
+}
+
+.nav-items {
+  width: 65vw;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.menu-item {
+  list-style: none;
+  margin-left: 2rem;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15rem;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s all ease-out;
+}
+
+.menu-item a:hover {
+  background: var(--light-yellow);
+  color: var(--burnt);
+}
+
+.menu-item a span {
+  margin-left: 0.7rem;
+  font-size: 1.3rem;
+}
+
+.sidebar-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7%;
+}
+
+.sidebar-toggle-logo {
+  margin-right: 10%;
+  font-size: 2rem;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 6rem;
+  background: var(--secondary-color);
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: 0.25s all ease-in-out;
+}
+
+.sidebar:hover {
+  width: 16rem;
+}
+/** used in conjunction with sidebar in navbar */
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-items {
+  padding-top: 10vh;
+  font-size: 1.2rem;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.2s all ease-out;
+}
+
+.sidebar-item {
+  list-style: none;
+  margin-top: 1rem;
+  width: 100%;
+  height: 4rem;
+}
+
+.sidebar-item a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  transition: 0.25s all ease-out;
+}
+
+.sidebar-item a span {
+  display: none;
+  margin-left: 1.5rem;
+  font-size: 1.4rem;
+}
+/** used in conjunction with showSide state in navbar */
+.sidebar-item a span.show {
+  display: flex;
+  transition: 0.4s all ease-out;
+}
+
+.sidebar-item a:hover {
+  background: var(--secondary-light-color);
+  color: var(--burnt);
+}
+
+.sidebar .btn {
+  margin-top: 2.4rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .logo-img {
+    width: 70%;
+  }
+
+  .sidebar.active {
+    width: 5rem;
+  }
+
+  .sidebar-item a span {
+    display: none;
+  }
+
+  .sidebar-item a span.show {
+    display: none;
+  }
+}

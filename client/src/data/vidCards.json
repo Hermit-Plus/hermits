@@ -1,0 +1,160 @@
+{
+  "vidCards": [
+    {
+      "id": 1,
+      "name": "bdouble0",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/JK7tfMkMYmQ/mqdefault.jpg"
+    },
+    {
+      "id": 2,
+      "name": "cubfan",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/X7ZqGjP-wHU/hqdefault.jpg"
+    },
+    {
+      "id": 3,
+      "name": "docm77",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/rYxOIfgWUks/hqdefault.jpg"
+    },
+    {
+      "id": 4,
+      "name": "ethoslab",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/wWHhzqGP_Z0/hqdefault.jpg"
+    },
+    {
+      "id": 5,
+      "name": "falsesymmetry",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/fjbM8B0O_-o/hqdefault.jpg"
+    },
+    {
+      "id": 6,
+      "name": "geminitay",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/6uY4CNKNHQ4/hqdefault.jpg"
+    },
+    {
+      "id": 7,
+      "name": "goodtimeswithscar",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/ggRPnFuu-Qs/hqdefault.jpg"
+    },
+    {
+      "id": 8,
+      "name": "grain",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/mugNnLkEgT8/hqdefault.jpg"
+    },
+    {
+      "id": 9,
+      "name": "hypnotized",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/_OBzQq2_myo/hqdefault.jpg"
+    },
+    {
+      "id": 10,
+      "name": "ijevin",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/0GIRcMB4is8/hqdefault.jpg"
+    },
+    {
+      "id": 11,
+      "name": "impulsesv",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/v346IR6AqFI/mqdefault.webp"
+    },
+    {
+      "id": 12,
+      "name": "iskall85",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/giLuKkTahRU/mqdefault.webp"
+    },
+    {
+      "id": 13,
+      "name": "joehills",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/IPyLUU9Dano/mqdefault.webp"
+    },
+    {
+      "id": 14,
+      "name": "keralis",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/0fyzQELXeJI/mqdefault.webp"
+    },
+    {
+      "id": 15,
+      "name": "mumbo",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/VTQOZQbJfU4/mqdefault.jpg"
+    },
+    {
+      "id": 16,
+      "name": "pearl",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/HIVv5TLrf8g/mqdefault.webp"
+    },
+    {
+      "id": 17,
+      "name": "rendog",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/s-k45J8EBXQ/mqdefault.jpg"
+    },
+    {
+      "id": 18,
+      "name": "stress",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/zoa6HF7wBgw/mqdefault.webp"
+    },
+    {
+      "id": 19,
+      "name": "tango",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/EUlEwChz3ak/mqdefault.webp"
+    },
+    {
+      "id": 20,
+      "name": "tinfoilchef",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/A1yBK9qY9Gs/mqdefault.jpg"
+    },
+    {
+      "id": 21,
+      "name": "beef",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/CemJGgXIiQg/mqdefault.jpg"
+    },
+    {
+      "id": 22,
+      "name": "welsknight",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/OUSLnmDg35c/mqdefault.jpg"
+    },
+    {
+      "id": 23,
+      "name": "xb",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/k6iJ-eV_xBk/mqdefault.webp"
+    },
+    {
+      "id": 24,
+      "name": "xisuma",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi_webp/DmlEBhvn1Sg/mqdefault.webp"
+    },
+    {
+      "id": 25,
+      "name": "zedaph",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/xglsGT1qOXA/mqdefault.jpg"
+    },
+    {
+      "id": 26,
+      "name": "zombiecleo",
+      "ep": 1,
+      "cardImg": "https://i.ytimg.com/vi/SBgcFf2ooe0/mqdefault.jpg"
+    }
+  ]
+}
