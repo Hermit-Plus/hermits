@@ -1,20 +1,82 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import styled from 'styled-components';
+import { device } from '../../responsive';
+
 import logo from '../../images/HermitPlusLogo.png';
 
 const LandingNav = () => {
   return (
-    <header className='header'>
-      <div className='logo'>
-        <img src={logo} alt='hermit craft' />
-      </div>
-      <div className='signup-button'>
-        <Link>
+    <Header>
+      <LogoBox>
+        <Logo src={logo} alt='hermit craft' />
+      </LogoBox>
+      <SignInBox>
+        <SignLink to='/app'>
           <h3>Sign Up</h3>
-        </Link>
-      </div>
-    </header>
+        </SignLink>
+      </SignInBox>
+    </Header>
   );
 };
 
 export default LandingNav;
+
+const Header = styled.header`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 50px;
+
+  @media ${device.mobileL} {
+    justify-content: center;
+  }
+`;
+
+const LogoBox = styled.div`
+  display: block;
+
+  @media ${device.mobileL} {
+    display: none;
+  }
+`;
+
+const Logo = styled.img`
+  height: 38px;
+  margin-left: 1em;
+
+  @media ${device.mobileL} {
+    display: none;
+    opacity: 0;
+    width: 0;
+  }
+`;
+
+const SignInBox = styled.div`
+  background-color: var(--light-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-right: 1em;
+  width: 300px;
+  height: 50px;
+
+  @media ${device.laptopL} {
+    margin-right: 0;
+    height: 44px;
+  }
+`;
+
+const SignLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 22px;
+`;
