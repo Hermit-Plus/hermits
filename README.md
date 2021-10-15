@@ -14,6 +14,6 @@ We run the YouTube url through the React Player. This means that you still get a
 The app is built with ReactJs. Currently I am focused on building and designing the front end. I am using json-server for this. json-server will serve up the data file I created so I can easily add and remove parts and pieces as I need. To get set up with this project;
 * clone the repo - or download zip.
 * once you have the repo set up run "npm i" in the client folder to install the dependencies.
-* To get up and running, in your terminal, cd into the client folder and "npm run serve" to start the json-server. The server will present to port 8001 and currently looks at the hermits.json data file.
+* To get up and running, in your terminal, cd into the client folder and **"npm run serve"** to start the json-server. The server will present to port 8001 and currently looks at the hermits.json data file.
 * to change the port, look at the serve script in package.json
-* get the app running on port 3000 with "npm run start".
+* get the app running on port 3000 with **"npm run start"**.
