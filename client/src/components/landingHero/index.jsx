@@ -28,6 +28,10 @@ const Hero = styled.section`
   background-repeat: no-repeat;
   width: 100%;
   height: 720px;
+
+  @media ${device.desktop} {
+    height: 115vh;
+  }
 `;
 
 const HeroOverlay = styled.div`
@@ -39,6 +43,14 @@ const HeroOverlay = styled.div`
     var(--light-blue) 10%,
     rgba(255, 255, 255, 0)
   );
+
+  @media ${device.desktop} {
+    background: linear-gradient(
+      15deg,
+      var(--light-blue) 30%,
+      rgba(255, 255, 255, 0)
+    );
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -46,11 +58,21 @@ const LogoWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  padding-top: 80px;
 `;
 
 const HeroLogo = styled.img`
-  margin-top: -600px; //!should this be a percentage?
+  margin-top: -110vh; //!should this be a percentage?
   max-width: 702px;
+
+  @media ${device.desktop} {
+    /* margin-top: -1150px; */
+    width: 100%;
+  }
+
+  @media ${device.laptopL} {
+    /* margin-top: -75em; */
+  }
 
   @media ${device.laptop} {
     width: 502px;
@@ -61,6 +83,7 @@ const HeroLogo = styled.img`
   }
 
   @media ${device.mobileL} {
+    /* margin-top: -55em; */
     width: 318px;
   }
 `;

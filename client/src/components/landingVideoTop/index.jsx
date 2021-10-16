@@ -292,16 +292,24 @@ const DesktopGrid = styled.div`
   gap: 2px 2px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(12, 69px);
-  margin-top: -25%;
+  margin-top: -50vh;
   overflow: hidden;
 
+  @media ${device.laptopL} {
+    /* margin-top: -30%; */
+  }
+
+  @media ${device.laptopM} {
+    grid-template-rows: repeat(12, 63px);
+  }
+
   @media ${device.laptop} {
-    margin-top: -30%;
+    /* margin-top: -40%; */
     grid-template-rows: repeat(12, 49px);
   }
 
   @media ${device.tablet} {
-    margin-top: -40%;
+    /* margin-top: -50%; */
     grid-template-rows: repeat(12, 36px);
   }
 
@@ -311,9 +319,13 @@ const DesktopGrid = styled.div`
 `;
 
 const VideoThumb = styled.img`
-  max-width: 238px;
+  max-width: 236px;
   border-radius: 5px;
   border: 1px solid var(--burnt);
+
+  @media ${device.laptopM} {
+    width: 222px;
+  }
 
   @media ${device.laptop} {
     width: 168px;
@@ -326,8 +338,8 @@ const VideoThumb = styled.img`
 
 const MobileThumb = styled(VideoThumb)`
   width: 246px;
-  margin-top: -40%;
-  margin-bottom: calc(40% + 1rem);
+  margin-top: -60vh;
+  margin-bottom: calc(60vh + 1rem);
 
   &:last-child {
     margin-bottom: 1rem;

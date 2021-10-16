@@ -30,7 +30,7 @@ const Header = styled.header`
   justify-content: space-between;
   background-color: var(--primary-dark-color);
   padding: 0 1em;
-  width: 100vw;
+  width: 100%;
   height: 70px;
 
   @media ${device.mobileL} {
