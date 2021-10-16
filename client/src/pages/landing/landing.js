@@ -1,8 +1,8 @@
 import React from 'react';
 
 import LandingNav from '../../components/landingNav';
-// import LandingHero from '../../components/landingHero';
-// import VideoTop from '../../components/VideoTop';
+import LandingHero from '../../components/landingHero';
+import VideoTop from '../../components/landingVideoTop';
 // import InfoSection from '../../components/InfoSection';
 // import InfoCards from '../../components/InfoCards';
 // import Hermits from '../../components/Hermits';
@@ -14,9 +14,9 @@ const Landing = () => {
   return (
     <div>
       <LandingNav />
-      {/* <VideoTop />
       <LandingHero />
-      <InfoSection />
+      <VideoTop />
+      {/* <InfoSection />
       <InfoCards />
       <Hermits />
       <InfoTwo />

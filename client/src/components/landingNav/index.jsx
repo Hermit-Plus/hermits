@@ -28,11 +28,14 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--primary-dark-color);
+  padding: 0 1em;
   width: 100vw;
-  height: 50px;
+  height: 70px;
 
   @media ${device.mobileL} {
     justify-content: center;
+    height: 50px;
   }
 `;
 
@@ -46,7 +49,6 @@ const LogoBox = styled.div`
 
 const Logo = styled.img`
   height: 38px;
-  margin-left: 1em;
 
   @media ${device.mobileL} {
     display: none;
@@ -61,7 +63,6 @@ const SignInBox = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  margin-right: 1em;
   width: 300px;
   height: 50px;
 
