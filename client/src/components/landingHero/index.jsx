@@ -62,7 +62,7 @@ const LogoWrapper = styled.div`
 `;
 
 const HeroLogo = styled.img`
-  margin-top: -110vh; //!should this be a percentage?
+  margin-top: -110vh;
   max-width: 702px;
 
   @media ${device.desktop} {

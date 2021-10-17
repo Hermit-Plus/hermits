@@ -274,11 +274,7 @@ const DesktopVideo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    var(--light-blue) 50%,
-    var(--primary-dark-color)
-  );
+  background: var(--light-blue);
 
   @media ${device.mobileL} {
     display: none;
