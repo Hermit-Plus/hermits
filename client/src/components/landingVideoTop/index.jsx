@@ -265,7 +265,7 @@ const MobileVideo = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    background: linear-gradient(var(--light-blue), var(--primary-dark-color));
+    background: var(--light-blue);
   }
 `;
 
@@ -333,9 +333,9 @@ const VideoThumb = styled.img`
 `;
 
 const MobileThumb = styled(VideoThumb)`
-  width: 246px;
-  margin-top: -60vh;
-  margin-bottom: calc(60vh + 1rem);
+  width: 256px;
+  margin-top: -30vh;
+  margin-bottom: calc(30vh + 1rem);
 
   &:last-child {
     margin-bottom: 1rem;

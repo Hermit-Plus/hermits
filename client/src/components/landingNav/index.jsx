@@ -12,11 +12,11 @@ const LandingNav = () => {
       <LogoBox>
         <Logo src={logo} alt='hermit craft' />
       </LogoBox>
-      <SignInBox>
-        <SignLink to='/app'>
+      <SignLink to='/app'>
+        <SignInBox>
           <h3>Sign Up</h3>
-        </SignLink>
-      </SignInBox>
+        </SignInBox>
+      </SignLink>
     </Header>
   );
 };
@@ -49,6 +49,7 @@ const LogoBox = styled.div`
 
 const Logo = styled.img`
   height: 38px;
+  margin-left: 3em;
 
   @media ${device.mobileL} {
     display: none;
@@ -80,4 +81,5 @@ const SignLink = styled(Link)`
   text-decoration: none;
   color: var(--text-main);
   font-size: 22px;
+  margin-right: 3em;
 `;

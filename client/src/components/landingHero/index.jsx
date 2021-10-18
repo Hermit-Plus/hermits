@@ -66,12 +66,10 @@ const HeroLogo = styled.img`
   max-width: 702px;
 
   @media ${device.desktop} {
-    /* margin-top: -1150px; */
     width: 100%;
   }
 
   @media ${device.laptopL} {
-    /* margin-top: -75em; */
   }
 
   @media ${device.laptop} {
@@ -83,7 +81,6 @@ const HeroLogo = styled.img`
   }
 
   @media ${device.mobileL} {
-    /* margin-top: -55em; */
     width: 318px;
   }
 `;
