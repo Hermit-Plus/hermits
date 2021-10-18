@@ -82,4 +82,8 @@ const SignLink = styled(Link)`
   color: var(--text-main);
   font-size: 22px;
   margin-right: 3em;
+
+  @media ${device.mobileL} {
+    margin-right: 0;
+  }
 `;
