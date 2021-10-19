@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import Home from '../home';
 import Favorites from '../favorites';
 import Hermits from '../hermits';
-import Players from '../hermits/players';
+// import Players from '../hermits/players';
 import Seasons from '../seasons';
 import Donate from '../donate';
 import Login from '../../auth/login';
@@ -12,15 +12,15 @@ import Register from '../../auth/register';
 const HomeApp = () => {
   return (
     <>
-      <Route path='/app'>
+      <Route path='/hermit-plus'>
         <Home />
       </Route>
       <Route path='/favorites'>
         <Favorites />
       </Route>
-      <Route path='/players'>
+      {/* <Route path='/players'>
         <Players />
-      </Route>
+      </Route> */}
       <Route path='/seasons'>
         <Seasons />
       </Route>

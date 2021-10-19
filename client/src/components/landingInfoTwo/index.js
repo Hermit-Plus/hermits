@@ -8,7 +8,7 @@ const LandingInfoTwo = () => {
   return (
     <>
       <InfoTwo>
-        <SignLink>
+        <SignLink to='/hermit-plus'>
           <SignInBox>
             <h3>Sign Up</h3>
           </SignInBox>

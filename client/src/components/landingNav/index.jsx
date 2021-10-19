@@ -12,7 +12,7 @@ const LandingNav = () => {
       <LogoBox>
         <Logo src={logo} alt='hermit craft' />
       </LogoBox>
-      <SignLink to='/app'>
+      <SignLink to='/hermit-plus'>
         <SignInBox>
           <h3>Sign Up</h3>
         </SignInBox>
