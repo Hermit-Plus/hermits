@@ -1,51 +1,68 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import AppRoute from './layout/AppRoute';
+import history from './history';
 import ScrollToTop from './utilis/scrollToTop';
 
-import Navbar from './components/navbar';
+// import Navbar from './components/navbar';
+//! Home refactor like Landing page
+import Landing from './pages/landing/landing';
+import LandingLayout from './layout/LandingLayout';
 import Home from './pages/home';
-import Favorites from './pages/favorites';
-import Hermits from './pages/hermits';
-import Players from './pages/hermits/players';
-import Seasons from './pages/seasons';
-import Donate from './pages/donate';
+import GeneralLayout from './layout/GeneralLayout';
+
 import Login from './auth/login';
 import Register from './auth/register';
+import Players from './pages/hermits/players';
+import Hermits from './pages/hermits';
+import Donate from './pages/donate';
+import Seasons from './pages/seasons';
 
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Router>
-        <Navbar />
+      <Router history={history}>
         <ScrollToTop>
           <Switch>
-            <Route exact path='/'>
-              <Home />
-            </Route>
-            <Route path='/favorites'>
-              <Favorites />
-            </Route>
-            <Route path='/players'>
-              <Players />
-            </Route>
-
-            <Route path='/seasons'>
-              <Seasons />
-            </Route>
-            <Route path='/donate'>
-              <Donate />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/register'>
-              <Register />
-            </Route>
-            <Route path='/hermits/:id'>
-              <Hermits />
-            </Route>
+            <AppRoute
+              exact
+              path='/'
+              component={Landing}
+              layout={LandingLayout}
+            />
+            <AppRoute
+              path='/hermit-plus'
+              component={Home}
+              layout={GeneralLayout}
+            />
+            <AppRoute
+              path='/donate'
+              component={Donate}
+              layout={GeneralLayout}
+            />
+            <AppRoute
+              path='/seasons'
+              component={Seasons}
+              layout={GeneralLayout}
+            />
+            <AppRoute
+              path='/players'
+              component={Players}
+              layout={GeneralLayout}
+            />
+            <AppRoute
+              path='/hermits/:id'
+              component={Hermits}
+              layout={GeneralLayout}
+            />
+            <AppRoute path='/login' component={Login} layout={GeneralLayout} />
+            <AppRoute
+              path='/register'
+              component={Register}
+              layout={GeneralLayout}
+            />
           </Switch>
         </ScrollToTop>
       </Router>

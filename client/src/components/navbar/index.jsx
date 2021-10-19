@@ -13,7 +13,10 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={() => setSidebar(false)}>
+        <Link
+          to='/hermit-plus'
+          className='navbar-logo'
+          onClick={() => setSidebar(false)}>
           <img className='logo-img' src={Logo} alt='Hermits are the best' />
         </Link>
 

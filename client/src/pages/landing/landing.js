@@ -1,28 +1,26 @@
 import React from 'react';
 
 import LandingNav from '../../components/landingNav';
-import LandingHero from '../../components/LandingHero';
-import VideoTop from '../../components/VideoTop';
-import InfoSection from '../../components/InfoSection';
-import InfoCards from '../../components/InfoCards';
-import Hermits from '../../components/Hermits';
-import InfoTwo from '../../components/InfoTwo';
-import VideoTwo from '../../components/VideoTwo';
-import Footer from '../../components/Footer';
+import LandingHero from '../../components/landingHero';
+import VideoTop from '../../components/landingVideoTop';
+import LandingInfo from '../../components/landingInfo';
+import LandingHermits from '../../components/landingHermits';
+import LandingInfoTwo from '../../components/landingInfoTwo';
+// import VideoTwo from '../../components/VideoTwo';
+import LandingFooter from '../../components/landingFooter';
 
 const Landing = () => {
   return (
-    <div>
+    <>
       <LandingNav />
       <LandingHero />
       <VideoTop />
-      <InfoSection />
-      <InfoCards />
-      <Hermits />
-      <InfoTwo />
-      <VideoTwo />
-      <Footer />
-    </div>
+      <LandingInfo />
+      <LandingHermits />
+      <LandingInfoTwo />
+      {/* <VideoTwo /> */}
+      <LandingFooter />
+    </>
   );
 };
 

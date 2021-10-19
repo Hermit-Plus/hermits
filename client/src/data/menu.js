@@ -28,14 +28,14 @@ export const sidebarItems = [
   {
     id: 1,
     title: 'Home',
-    path: '/',
+    path: '/hermit-plus',
     sName: 'sidebar-item',
     icon: <FaHome />
   },
   {
     id: 2,
-    title: 'Favorites',
-    path: '/favorites',
+    title: 'Landing',
+    path: '/',
     sName: 'sidebar-item',
     icon: <FaRegHeart />
   },
