@@ -4,8 +4,6 @@ import AppRoute from './layout/AppRoute';
 import history from './history';
 import ScrollToTop from './utilis/scrollToTop';
 
-// import Navbar from './components/navbar';
-//! Home refactor like Landing page
 import Landing from './pages/landing/landing';
 import LandingLayout from './layout/LandingLayout';
 import Home from './pages/home';
@@ -19,6 +17,8 @@ import Donate from './pages/donate';
 import Seasons from './pages/seasons';
 
 import './App.css';
+
+//! Don't forget Favorites page
 
 function App() {
   return (
