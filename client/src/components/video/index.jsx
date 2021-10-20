@@ -4,15 +4,19 @@ import styled from 'styled-components';
 import { vidCards } from '../../data/videos';
 
 function Videos() {
+  const s8e1Videos = vidCards.filter((video) => {
+    return video.season === 8 && video.ep === 1;
+  });
+
   return (
     <Container>
       <SectionTitle>First Episode from every Hermit - Season 8</SectionTitle>
       <Content>
         {vidCards &&
-          vidCards.map((vid) => (
+          s8e1Videos.map((vid) => (
             <Wrap key={vid.id}>
               <Link to={`/detail/${vid.id}`}>
-                <img src={vid.cardImg} alt='video' />
+                <img src={vid.cardImg} alt={vid.cardImgAlt} />
               </Link>
             </Wrap>
           ))}
