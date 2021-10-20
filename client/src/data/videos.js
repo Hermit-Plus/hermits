@@ -97,16 +97,28 @@ export const specials = [
 
 export const vidCards = [
   {
-    id: 1,
+    id: 'bdub8001',
     name: 'bdouble0',
+    season: 8,
     ep: 1,
-    cardImg: 'https://i.ytimg.com/vi/JK7tfMkMYmQ/mqdefault.jpg'
+    cardImg: 'https://i.ytimg.com/vi/JK7tfMkMYmQ/hqdefault.jpg',
+    videoImgAlt: 'B dubs Hermitcraft season eight episode one'
   },
+  // {
+  //   id: 8002,
+  //   name: 'bdouble0',
+  //   season: 8,
+  //   ep: 2,
+  //   cardImg: 'https://i.ytimg.com/vi/OBOAlfX7Zus/hqdefault.jpg',
+  //   videoImgAlt: 'B dubs Hermitcraft season eight episode two'
+  // },
   {
-    id: 2,
+    id: 'cubfan8001',
     name: 'cubfan',
+    season: 8,
     ep: 1,
-    cardImg: 'https://i.ytimg.com/vi/X7ZqGjP-wHU/hqdefault.jpg'
+    cardImg: 'https://i.ytimg.com/vi/X7ZqGjP-wHU/hqdefault.jpg',
+    videoImgAlt: 'Cub fan Hermitcraft season eight episode one'
   },
   {
     id: 3,
