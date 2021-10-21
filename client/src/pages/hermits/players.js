@@ -3,6 +3,7 @@ import PlayerCard from '../../components/playerCard';
 import useFetch from '../../hooks/useFetch';
 
 import styled from 'styled-components';
+import { device } from '../../responsive';
 
 function Players() {
   const {
@@ -13,10 +14,12 @@ function Players() {
 
   return (
     <Container>
-      {players &&
-        players.map((player) => {
-          return <PlayerCard player={player} />;
-        })}
+      <PlayerWrap>
+        {players &&
+          players.map((player) => {
+            return <PlayerCard player={player} />;
+          })}
+      </PlayerWrap>
     </Container>
   );
 }
@@ -45,4 +48,10 @@ const Container = styled.div`
     bottom: 0;
     z-index: -1;
   }
+`;
+
+const PlayerWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 1366px;
 `;

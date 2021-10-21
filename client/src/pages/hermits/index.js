@@ -52,41 +52,51 @@ const Hermits = () => {
           </LeftDiv>
           <RightDiv>
             <Social>
-              <a
-                href={player.youtube}
-                target='_blank'
-                rel='noreferrer'
-                tabIndex='0'>
-                <FaYoutube />
-              </a>
-              <a
-                href={player.twitch}
-                target='_blank'
-                rel='noreferrer'
-                tabIndex='0'>
-                <FaTwitch />
-              </a>
-              <a
-                href={player.patreon}
-                target='_blank'
-                rel='noreferrer'
-                tabIndex='0'>
-                <FaPatreon />
-              </a>
-              <a
-                href={player.instagram}
-                target='_blank'
-                rel='noreferrer'
-                tabIndex='0'>
-                <FaInstagram />
-              </a>
-              <a
-                href={player.twitter}
-                target='_blank'
-                rel='noreferrer'
-                tabIndex='0'>
-                <FaTwitter />
-              </a>
+              {player.youtube && (
+                <a
+                  href={player.youtube}
+                  target='_blank'
+                  rel='noreferrer'
+                  tabIndex='0'>
+                  <FaYoutube />
+                </a>
+              )}
+              {player.twitch && (
+                <a
+                  href={player.twitch}
+                  target='_blank'
+                  rel='noreferrer'
+                  tabIndex='0'>
+                  <FaTwitch />
+                </a>
+              )}
+              {player.patreon && (
+                <a
+                  href={player.patreon}
+                  target='_blank'
+                  rel='noreferrer'
+                  tabIndex='0'>
+                  <FaPatreon />
+                </a>
+              )}
+              {player.instagram && (
+                <a
+                  href={player.instagram}
+                  target='_blank'
+                  rel='noreferrer'
+                  tabIndex='0'>
+                  <FaInstagram />
+                </a>
+              )}
+              {player.twitter && (
+                <a
+                  href={player.twitter}
+                  target='_blank'
+                  rel='noreferrer'
+                  tabIndex='0'>
+                  <FaTwitter />
+                </a>
+              )}
             </Social>
             <HermitSkin src={player.skin} alt={player.skinAlt} />
           </RightDiv>
@@ -211,6 +221,6 @@ const Button = styled.button`
 `;
 
 const HermitSkin = styled.img`
-  width: 270px;
+  /* width: 270px; */
   height: 360px;
 `;
