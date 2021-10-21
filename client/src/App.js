@@ -13,6 +13,7 @@ import Login from './auth/login';
 import Register from './auth/register';
 import Players from './pages/hermits/players';
 import Hermits from './pages/hermits';
+import Detail from './pages/videoDetails';
 import Donate from './pages/donate';
 import Seasons from './pages/seasons';
 
@@ -55,6 +56,11 @@ function App() {
             <AppRoute
               path='/hermits/:id'
               component={Hermits}
+              layout={GeneralLayout}
+            />
+            <AppRoute
+              path='/detail/:id'
+              component={Detail}
               layout={GeneralLayout}
             />
             <AppRoute path='/login' component={Login} layout={GeneralLayout} />

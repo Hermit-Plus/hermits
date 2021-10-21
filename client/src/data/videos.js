@@ -12,7 +12,7 @@ export const videos = [
     fav: 'false',
     rating: 3,
     subtitle: 'episode 1',
-    title: 'Hermit Craft, ep 1',
+    title: 'Hermitcraft, S8 E1',
     titleImg: '',
     videoLoc: 'JK7tfMkMymQ'
   },
