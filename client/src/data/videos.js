@@ -5,7 +5,8 @@ export const videos = [
     season: 8,
     hermit: 'bdouble0',
     backgroundImg: '',
-    cardImg: 'https://i.ytimg.com/vi/JK7tfMkMYmQ/mqdefault.jpg',
+    cardImg:
+      'https://i.ytimg.com/vi/JK7tfMkMYmQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnWV3rCK6792TzhepbyhiTMZA-sw',
     cardImgAlt: 'episode one from b double oh hermit craft',
     description:
       'Minecraft time on the Hermitcraft Server Season 8 SMP Episode 1!  Today on the Hermitcraft Minecraft SMP, we start a brand new adventure in a brand new world with a very old set of friends. ',
@@ -102,7 +103,8 @@ export const vidCards = [
     ep: 1,
     season: 8,
     hermit: 'bdouble0',
-    cardImg: 'https://i.ytimg.com/vi/JK7tfMkMYmQ/hqdefault.jpg',
+    cardImg:
+      'https://i.ytimg.com/vi/JK7tfMkMYmQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnWV3rCK6792TzhepbyhiTMZA-sw',
     cardImgAlt: 'B dubs Hermitcraft season eight episode one'
   },
   {
