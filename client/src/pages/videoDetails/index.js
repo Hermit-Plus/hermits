@@ -20,6 +20,8 @@ function Detail() {
     error
   } = useFetch('http://localhost:8001/vidDetails/' + id);
 
+  console.log('vidDetails: id', id);
+
   return (
     <Container>
       {vidDetails && (
@@ -67,7 +69,7 @@ function Detail() {
                   </div>
                 </Modal>
 
-                <TrailerButton>
+                <TrailerButton to={`/hermits/${vidDetails.hermit_owner_ID}`}>
                   <span>INFORMATION</span>
                 </TrailerButton>
                 <AddButton>
@@ -165,7 +167,7 @@ const VidSplit = styled.div`
   display: flex;
   /* align-items: center;
   justify-content: center; */
-  width: 1366px;
+  width: 1366px; // todo: Don't forget this width.
   grid-template-columns: 50% 50%;
 `;
 
@@ -227,7 +229,8 @@ const Controls = styled.div`
   /* margin-left: 4em; */
 `;
 
-const PlayButton = styled.button`
+const PlayButton = styled(Link)`
+  //! Button to Link. Fix this css
   border-radius: 4px;
   font-size: 15px;
   padding: 0px 16px;
@@ -256,7 +259,7 @@ const TrailerButton = styled(PlayButton)`
   }
 `;
 
-const AddButton = styled.button`
+const AddButton = styled(Link)`
   width: 32px;
   height: 32px;
   margin-right: 16px;

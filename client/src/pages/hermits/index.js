@@ -1,5 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
+import Videos from '../../components/video';
 
 //! If using the json-server, use the useFetch hook. If not, then use the js data hermits.js
 //! comment out the useFetch hook
@@ -27,6 +29,8 @@ const Hermits = () => {
     error
   } = useFetch('http://localhost:8001/players/' + id);
 
+  console.log('videos', vid);
+
   //! remove comment of player to show just bdubs on access to page
   //const player = players[0];
 
@@ -34,6 +38,7 @@ const Hermits = () => {
     <Container>
       {player && (
         <Divide key={player.id}>
+          <div></div>
           <LeftDiv>
             <img src={player.aliasImg} alt={player.aliasAlt} />
 
@@ -44,11 +49,6 @@ const Hermits = () => {
             <h2>Info:</h2>
             <p>{player.info}</p>
             <p>{player.info2}</p>
-            <BtnWrap>
-              <Button>Season 8</Button>
-              <Button>All Videos</Button>
-              <Button>Music</Button>
-            </BtnWrap>
           </LeftDiv>
           <RightDiv>
             <Social>
@@ -99,6 +99,11 @@ const Hermits = () => {
               )}
             </Social>
             <HermitSkin src={player.skin} alt={player.skinAlt} />
+            <BtnWrap>
+              <Button>Fan Art</Button>
+              <Button>Videos</Button>
+              <Button to='/players'>Hermits</Button>
+            </BtnWrap>
           </RightDiv>
         </Divide>
       )}
@@ -136,10 +141,11 @@ const Divide = styled.div`
   background-color: var(--burnt);
   border-radius: 5px;
   opacity: 0.9;
-  display: grid;
-  grid-template-columns: 60% 40%;
+  display: flex;
+  grid-template-columns: 50% 50%;
   padding: 2rem;
-  width: 90vw;
+  width: 1366px;
+  //width: 90vw; // * old
   height: 75vh;
 
   h2 {
@@ -183,7 +189,8 @@ const LeftDiv = styled.div`
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    width: 900px;
   }
 `;
 
@@ -198,10 +205,11 @@ const RightDiv = styled.div`
 const BtnWrap = styled.div`
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
   margin-top: 1.5rem;
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
   font-family: 'Kanit', sans-serif;
   cursor: pointer;
   font-size: 18px;
