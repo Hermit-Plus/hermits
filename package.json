@@ -1,5 +1,5 @@
 {
-  "name": "HermitCraft",
+  "name": "HermitPlus",
   "version": "1.0.0",
   "description": "Server for hermit craft",
   "main": "server.js",

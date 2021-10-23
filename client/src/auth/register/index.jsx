@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+// import history from '../../history';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { register } from '../../actions/user.actions';
 
 import styled from 'styled-components';
 
-const Register = () => {
-  const [emailState, setEmailState] = useState('');
-  const [passwordState, setPasswordState] = useState('');
-  const [confirmPasswordState, setConfirmPasswordState] = useState('');
-  const [oops, setOops] = useState('');
+const Register = ({ location, history }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [oops, setOops] = useState(null);
+
+  const dispatch = useDispatch();
+  const userReg = useSelector((state) => state.userReg);
+  const { loading, error, userInfo } = userReg;
+
+  const redirect = location.search ? location.search.split('=')[1] : '/';
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
+    }
+  }, [history, userInfo, redirect]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (passwordState !== confirmPasswordState) {
-      setOops("Your passwords don't match");
-      setTimeout(() => {
-        setOops('');
-        setPasswordState('');
-        setConfirmPasswordState('');
-      }, 3000);
+    if (password !== confirmPassword) {
+      setOops('Passwords do not match');
+    } else {
+      dispatch(register(name, email, password));
     }
-    console.log('form submit', emailState, passwordState, confirmPasswordState);
   };
 
   return (
@@ -33,12 +45,22 @@ const Register = () => {
           <Ooops>{oops}</Ooops>
           <LoginTitle>Register</LoginTitle>
           <InputWrap>
+            <Label htmlFor='name'>Name</Label>
+            <Input
+              type='text'
+              id='name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder='Name'
+            />
+          </InputWrap>
+          <InputWrap>
             <Label htmlFor='email'>Email</Label>
             <Input
               type='email'
               id='email'
-              value={emailState}
-              onChange={(e) => setEmailState(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder='Email'
             />
           </InputWrap>
@@ -47,8 +69,8 @@ const Register = () => {
             <Input
               type='password'
               id='password'
-              value={passwordState}
-              onChange={(e) => setPasswordState(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder='Password'
             />
           </InputWrap>
@@ -57,9 +79,9 @@ const Register = () => {
             <Input
               type='password'
               id='confirmPassword'
-              value={confirmPasswordState}
-              onChange={(e) => setConfirmPasswordState(e.target.value)}
-              placeholder='Confirm that Password'
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Those blocks don't stack"
             />
           </InputWrap>
           <ButtonWrap>

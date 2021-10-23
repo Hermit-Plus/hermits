@@ -1,8 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-import Videos from '../../components/video';
-
 //! If using the json-server, use the useFetch hook. If not, then use the js data hermits.js
 //! comment out the useFetch hook
 import useFetch from '../../hooks/useFetch';
@@ -28,8 +26,6 @@ const Hermits = () => {
     loading,
     error
   } = useFetch('http://localhost:8001/players/' + id);
-
-  console.log('videos', vid);
 
   //! remove comment of player to show just bdubs on access to page
   //const player = players[0];
