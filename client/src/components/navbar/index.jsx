@@ -21,6 +21,9 @@ function Navbar() {
         </Link>
 
         <ul className='nav-items'>
+          <li>
+            <img className='profile' src='/images/profile/bat.png' alt='bat' />
+          </li>
           {menuItems.map((item) => {
             return (
               <li key={item.id} className={item.mName}>

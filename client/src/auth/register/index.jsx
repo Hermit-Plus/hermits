@@ -1,39 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useRegister from '../../hooks/useReg';
 // import history from '../../history';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
-import { register } from '../../actions/user.actions';
+// import { register } from '../../actions/user.actions';
 
 import styled from 'styled-components';
 
 const Register = ({ location, history }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [oops, setOops] = useState(null);
-
-  const dispatch = useDispatch();
-  const userReg = useSelector((state) => state.userReg);
-  const { loading, error, userInfo } = userReg;
-
-  const redirect = location.search ? location.search.split('=')[1] : '/';
-
-  useEffect(() => {
-    if (userInfo) {
-      history.push(redirect);
-    }
-  }, [history, userInfo, redirect]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      setOops('Passwords do not match');
+  const registration = () => {
+    if (!value) {
+      alert('nothing here');
     } else {
-      dispatch(register(name, email, password));
+      console.log(value);
     }
+
+    // if (value.password !== value.confirmPassword) {
+    //   setOops('Passwords do not match');
+    // } else {
+    //   dispatch(register(name, email, password));
+    // }
   };
+
+  const [value, fault, handleChange, handleSelected, handleSubmit] =
+    useRegister(registration);
+
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
+  // const [oops, setOops] = useState(null);
+
+  // const dispatch = useDispatch();
+  // const userReg = useSelector((state) => state.userReg);
+  // const { loading, error, userInfo } = userReg;
+
+  // const redirect = location.search ? location.search.split('=')[1] : '/';
+
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     history.push(redirect);
+  //   }
+  // }, [history, userInfo, redirect]);
 
   return (
     <SectionWrapper>
@@ -42,15 +51,16 @@ const Register = ({ location, history }) => {
           <img src='/images/gemini_minecraft_skin.png' />
         </div>
         <form onSubmit={handleSubmit} className='signIn-form'>
-          <Ooops>{oops}</Ooops>
+          <ShowFault>{fault}</ShowFault>
           <LoginTitle>Register</LoginTitle>
           <InputWrap>
             <Label htmlFor='name'>Name</Label>
             <Input
               type='text'
               id='name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              name='name'
+              value={value.name || ''}
+              onChange={handleChange}
               placeholder='Name'
             />
           </InputWrap>
@@ -59,8 +69,9 @@ const Register = ({ location, history }) => {
             <Input
               type='email'
               id='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name='email'
+              value={value.email || ''}
+              onChange={handleChange}
               placeholder='Email'
             />
           </InputWrap>
@@ -69,8 +80,9 @@ const Register = ({ location, history }) => {
             <Input
               type='password'
               id='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name='password'
+              value={value.password || ''}
+              onChange={handleChange}
               placeholder='Password'
             />
           </InputWrap>
@@ -79,10 +91,34 @@ const Register = ({ location, history }) => {
             <Input
               type='password'
               id='confirmPassword'
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Those blocks don't stack"
+              name='confirmPassword'
+              value={value.confirmPassword || ''}
+              onChange={handleChange}
+              placeholder='Confirm Password'
             />
+          </InputWrap>
+          <InputWrap>
+            <Label htmlFor='avatar'>Avatar</Label>
+            <FaceSelect id='avatar' onChange={handleSelected}>
+              <option value=''></option>
+              <option value='steve'>Steve</option>
+              <option value='bat'>Bat</option>
+              <option value='cow'>Cow</option>
+              <option value='mooshroom'>Mooshroom</option>
+              <option value='pig'>Pig</option>
+              <option value='sheep'>Sheep</option>
+              <option value='wolf'>Wolf</option>
+              <option value='drown'>Drown</option>
+              <option value='enderman'>Enderman</option>
+              <option value='ghast'>Ghast</option>
+              <option value='husk'>Husk</option>
+              <option value='jack'>Jack-O-Lantern</option>
+              <option value='slime'>Slime</option>
+              <option value='spider'>Spider</option>
+              <option value='stray'>Stray</option>
+              <option value='villager'>Villager</option>
+              <option value='zombie-pigman'>Zombie-Pigman</option>
+            </FaceSelect>
           </InputWrap>
           <ButtonWrap>
             <Button type='submit'>place block</Button>
@@ -155,6 +191,12 @@ const Input = styled.input`
   border-radius: 3px;
 `;
 
+const FaceSelect = styled.select`
+  font-family: 'Kanit', sans-serif;
+  border: none;
+  font-size: 16px;
+`;
+
 const Button = styled.button`
   font-family: 'Kanit', sans-serif;
   font-size: 18px;
@@ -165,6 +207,10 @@ const Button = styled.button`
   border: none;
   border-radius: 3px;
   padding: 0.4rem 1rem;
+`;
+
+const ShowFault = styled.h4`
+  color: var(--light-yellow);
 `;
 
 const P = styled.p`
