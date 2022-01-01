@@ -54,6 +54,7 @@ function Detail() {
             </VidLeft>
             <VidRight>
               {/* trailer */}
+              <img src={vidDetails.cardImg} alt={vidDetails.title} />
               <RestDiv>
                 <Link to=''>
                   <img src={vidDetails.hermit01} alt='' />
@@ -135,9 +136,10 @@ const BlackFade = styled.div`
 
 const VidSplit = styled.div`
   display: flex;
+  margin-top: 1em;
   /* align-items: center;
   justify-content: center; */
-  width: 1366px; // todo: Don't forget this width.
+  width: 900px; // todo: Don't forget this width.
   grid-template-columns: 50% 50%;
 `;
 
@@ -251,7 +253,7 @@ const GroupWatchButton = styled(AddButton)`
 
 const VideoTitle = styled.h1`
   color: var(--text-main);
-  font-size: 48px;
+  font-size: 36px;
   /* margin-left: 1em; */
 `;
 
@@ -264,7 +266,7 @@ const SubTitle = styled.h5`
 
 const Description = styled.p`
   line-height: 1.4;
-  font-size: 20px;
+  font-size: 1rem;
   margin-top: 16px;
   /* margin-left: 2.5em; */
   color: rgb(249, 249, 249);
