@@ -41,25 +41,29 @@ const PlayerCard = ({ player }) => {
 export default PlayerCard;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--primary-light-color);
   margin: 0.5rem;
   padding: 0.3rem;
-  border-radius: 1rem;
+  border-radius: 0.5em;
 `;
 
 const FaceWrap = styled.div`
+  width: 175px;
   text-align: center;
   color: var(--secondary-light-color);
   font-size: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5em;
   border: 2px solid var(--text-dark);
   background: linear-gradient(#e66465, var(--secondary-color));
 `;
 
 const HermitImg = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 1rem;
+  width: 175px;
+  /*height: 200px;*/
+  border-radius: 0.5em;
   -webkit-mask-image: -webkit-gradient(
     linear,
     left top,

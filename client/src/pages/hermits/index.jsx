@@ -22,9 +22,7 @@ const Hermits = () => {
   const { id } = useParams();
 
   const {
-    data: player,
-    loading,
-    error
+    data: player // todo bring in loading and error
   } = useFetch('http://localhost:8001/players/' + id);
 
   //! remove comment of player to show just bdubs on access to page

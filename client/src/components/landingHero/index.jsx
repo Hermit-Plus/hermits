@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import bg from '../../images/minecraft_full_bg.jpg';
 import bendLogo from '../../images/HermitPlusBend.png';
-import bdubVideo from '../../images/bDouble0S8E1thumb.webp';
 
 import styled from 'styled-components';
 import { device } from '../../responsive';
@@ -22,7 +22,7 @@ const LandingHero = () => {
 export default LandingHero;
 
 const Hero = styled.section`
-  background: url('/images/minecraft-fullbg.jpg');
+  background-image: url(${bg});
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;

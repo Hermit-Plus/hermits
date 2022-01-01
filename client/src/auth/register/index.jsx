@@ -1,58 +1,50 @@
+//? Removed the history import 1/1/22 as it is no longer used
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useRegister from '../../hooks/useReg';
-// import history from '../../history';
-// import { useDispatch, useSelector } from 'react-redux';
+import useRegister from '../../hooks/useRegister';
+import { register } from '../../actions/user.actions';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { register } from '../../actions/user.actions';
-import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import styled from 'styled-components';
 import { device } from '../../responsive';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
 const Register = ({ location, history }) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
+  const dispatch = useDispatch();
 
   const registration = () => {
-    if (!value) {
-      alert('nothing here');
-    } else {
-      console.log(value);
-    }
+    const { name, email, password, avatar } = value;
 
-    // if (value.password !== value.confirmPassword) {
-    //   setOops('Passwords do not match');
-    // } else {
-    //   dispatch(register(name, email, password));
-    // }
+    dispatch(register(name, email, password, avatar));
   };
 
   const [value, fault, handleChange, handleSelected, handleSubmit] =
     useRegister(registration);
 
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
-  // const [oops, setOops] = useState(null);
+  const userReg = useSelector((state) => state.userReg);
+  const { userInfo } = userReg; // todo bring in loading and error
 
-  // const dispatch = useDispatch();
-  // const userReg = useSelector((state) => state.userReg);
-  // const { loading, error, userInfo } = userReg;
+  const redirect = location.search
+    ? location.search.split('=')[1]
+    : '/hermit-plus';
 
-  // const redirect = location.search ? location.search.split('=')[1] : '/';
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     history.push(redirect);
-  //   }
-  // }, [history, userInfo, redirect]);
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
+    }
+  }, [history, userInfo, redirect]);
 
   return (
     <SectionWrapper>
       <Container>
         <CharacterWrap>
-          <img src='/images/gemini_minecraft_skin.png' />
+          <img
+            src='/images/gemini_minecraft_skin.png'
+            alt='Gemini Tay would like you to register'
+          />
         </CharacterWrap>
         <form onSubmit={handleSubmit} className='signIn-form'>
           <ShowFault>{fault}</ShowFault>
@@ -327,10 +319,4 @@ const P = styled.p`
 const A = styled(Link)`
   text-decoration: none;
   color: var(--light-yellow);
-`;
-
-const Ooops = styled.p`
-  color: var(--light-yellow);
-  height: 1rem;
-  width: 225px;
 `;

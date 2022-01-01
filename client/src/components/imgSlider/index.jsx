@@ -5,15 +5,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import useFetch from '../../hooks/useFetch';
-//import { players } from '../../data/hermits';
 
 import styled from 'styled-components';
 
 function ImgSlider() {
   const {
-    data: players,
-    loading,
-    error
+    data: players // todo bring in loading and error
   } = useFetch('http://localhost:8001/players');
   console.log(players);
 
@@ -50,11 +47,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 6rem; //* the sidebar is 6rem wide
   margin-top: 5vh;
 `;
 
 const Carousel = styled(Slider)`
-  width: 1500px;
+  width: 900px; //* max width should be 900px
   ul li button {
     &:before {
       font-size: 10px;
