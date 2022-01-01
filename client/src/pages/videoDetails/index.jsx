@@ -54,7 +54,7 @@ function Detail() {
             </VidLeft>
             <VidRight>
               {/* trailer */}
-              <img src={vidDetails.cardImg} alt={vidDetails.title} />
+              <img src={vidDetails.cardImg} alt={vidDetails.cardImgAlt} />
               <RestDiv>
                 <Link to=''>
                   <img src={vidDetails.hermit01} alt='' />
