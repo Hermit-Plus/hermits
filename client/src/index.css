@@ -45,7 +45,7 @@ h6 {
 p,
 small {
   font-family: 'Kanit', sans-serif;
-  font-size: 18px;
+  /*font-size: 18px;*/
 }
 
 .video-grid > div:nth-of-type(1) {
