@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
+import { FaDonate } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../actions/user.actions';
 
 import Logo from '../../images/HermitPlusLogo.png';
-import { menuItems, sidebarItems } from '../../data/menu';
+import { sidebarItems } from '../../data/menu'; //? removed menuItems import
 
 import './style/navbar.css';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const [showSide, setShowSide] = useState(false);
+  const dispatch = useDispatch();
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin; // todo bring in loading and error
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
+  console.log(userInfo);
   return (
     <>
       <nav className='navbar'>
@@ -21,6 +33,31 @@ function Navbar() {
         </Link>
 
         <ul className='nav-items'>
+          <li className='menu-item'>
+            <Link to='/donate'>
+              <FaDonate />
+              <span>Donate</span>
+            </Link>
+          </li>
+          {userInfo ? (
+            <li className='menu-item'>
+              <img
+                src={`/images/profile/${userInfo.avatar}.png`}
+                alt='avatar'
+                onClick={handleLogout}
+              />
+            </li>
+          ) : (
+            <li className='menu-item'>
+              <Link to='/login'>
+                <FaDonate />
+                <span>Login</span>
+              </Link>
+            </li>
+          )}
+        </ul>
+
+        {/* <ul className='nav-items'>
           {menuItems.map((item) => {
             return (
               <li key={item.id} className={item.mName}>
@@ -31,7 +68,7 @@ function Navbar() {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
 
         {/* <div className='sidebar-toggle'>
           {sidebar ? (

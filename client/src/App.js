@@ -1,7 +1,8 @@
+//? removed history as it is not used 1/1/22
+
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AppRoute from './layout/AppRoute';
-import history from './history';
 import ScrollToTop from './utilis/scrollToTop';
 
 import Landing from './pages/landing/landing';
@@ -14,17 +15,18 @@ import Register from './auth/register';
 import Players from './pages/hermits/players';
 import Hermits from './pages/hermits';
 import Detail from './pages/videoDetails';
+import VideoPlayer from './pages/videoPlayer/videoPlayer';
 import Donate from './pages/donate';
 import Seasons from './pages/seasons';
 
 import './App.css';
 
-//! Don't forget Favorites page
+// todo Don't forget Favorites page
 
 function App() {
   return (
     <div>
-      <Router history={history}>
+      <Router>
         <ScrollToTop>
           <Switch>
             <AppRoute
@@ -63,6 +65,7 @@ function App() {
               component={Detail}
               layout={GeneralLayout}
             />
+            <Route path='/video/:id' component={VideoPlayer} />
             <AppRoute path='/login' component={Login} layout={GeneralLayout} />
             <AppRoute
               path='/register'

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ImgSlider from '../../components/imgSlider/imgSlider';
+import ImgSlider from '../../components/imgSlider';
 import Videos from '../../components/video';
 import Specials from '../../components/special';
 

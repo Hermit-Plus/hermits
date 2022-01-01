@@ -42,7 +42,8 @@ h6 {
   font-family: 'Teko', sans-serif;
 }
 
-p {
+p,
+small {
   font-family: 'Kanit', sans-serif;
   font-size: 18px;
 }

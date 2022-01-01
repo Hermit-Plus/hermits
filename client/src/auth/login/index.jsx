@@ -1,22 +1,43 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../actions/user.actions';
 
 import styled from 'styled-components';
 
-const Login = () => {
-  const [emailState, setEmailState] = useState('');
-  const [passwordState, setPasswordState] = useState('');
+const Login = ({ location, history }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin; // todo bring in loading and error
+
+  const redirect = location.search
+    ? location.search.split('=')[1]
+    : '/hermit-plus';
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
+    }
+  }, [history, userInfo, redirect]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('form submit', emailState, passwordState);
+    dispatch(login(email, password));
   };
 
   return (
     <SectionWrapper>
       <Container>
         <div>
-          <img src='/images/mumbo_skin.png' />
+          <img
+            src='/images/mumbo_skin.png'
+            alt='Mumbo would like you to Login'
+          />
         </div>
         <form onSubmit={handleSubmit} className='signIn-form'>
           <LoginTitle>Sign In</LoginTitle>
@@ -25,8 +46,8 @@ const Login = () => {
             <Input
               type='email'
               id='email'
-              value={emailState}
-              onChange={(e) => setEmailState(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder='Email'
             />
           </InputWrap>
@@ -35,8 +56,8 @@ const Login = () => {
             <Input
               type='password'
               id='password'
-              value={passwordState}
-              onChange={(e) => setPasswordState(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder='Password'
             />
           </InputWrap>

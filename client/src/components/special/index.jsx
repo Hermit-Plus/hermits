@@ -31,11 +31,12 @@ function Specials() {
 export default Specials;
 
 const Container = styled.section`
-  margin: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 2rem 0;
+  margin-left: 6.7rem; //* the sidebar is 6rem wide
 
   h2 {
     font-size: 24px;
@@ -47,9 +48,9 @@ const Container = styled.section`
 const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-gap: 25px;
+  grid-gap: 10px;
   margin-bottom: 50px;
-  width: 1300px;
+  width: calc(100vw - 11rem);
 `;
 
 const Wrap = styled.div`
@@ -57,16 +58,16 @@ const Wrap = styled.div`
   border-radius: 10px;
   overflow: hidden;
   background: #000;
-  width: 322px;
-  height: 642px;
+  width: 275px;
+  /*height: 100%;*/
   border: 3px solid rgba(249, 249, 249, 0.1);
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
   img {
-    width: 320px;
-    height: 640px;
+    width: 275px;
+    /*height: 100%;*/
     object-fit: contain;
     border-radius: 10px;
   }
@@ -85,15 +86,15 @@ const Info = styled.div`
   z-index: 5;
 
   h1 {
-    font-size: 32px;
+    font-size: 26px;
     letter-spacing: 0.1rem;
     color: var(--text-main);
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-main);
-    width: 280px;
+    width: 100%;
     padding: 0.5rem;
   }
 `;

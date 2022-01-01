@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
+// ? import {device} for responsive css build
+
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 
-import Modal from 'react-modal';
-import ReactPlayer from 'react-player';
+// import Modal from 'react-modal';
 
 import { FaPlay, FaPlus, FaHeart } from 'react-icons/fa';
 
 import styled from 'styled-components';
-import { device } from '../../responsive';
 
 function Detail() {
-  const [modalOpen, setModalOpen] = useState(false);
   const { id } = useParams();
 
   const {
-    data: vidDetails,
-    loading,
-    error
+    data: vidDetails // todo bring in loading and error
   } = useFetch('http://localhost:8001/vidDetails/' + id);
 
   console.log('vidDetails: id', id);
@@ -30,45 +27,18 @@ function Detail() {
             <BlackFade />
             <img src={vidDetails.cardImg} alt='' />
           </Background>
-
           <VidSplit>
             <VidLeft>
               <ImageTitle>
                 <img src={vidDetails.aliasImg} alt='' />
               </ImageTitle>
               <VideoTitle>{vidDetails.title}</VideoTitle>
+
               <Controls>
-                <PlayButton onClick={() => setModalOpen(true)}>
+                <PlayButton to={`/video/${vidDetails.id}`}>
                   <FaPlay /> &nbsp;
                   <span>PLAY</span>
                 </PlayButton>
-                <Modal
-                  isOpen={modalOpen}
-                  style={{
-                    overlay: {},
-                    content: {
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      borderRadius: '5px',
-                      top: '10vh',
-                      left: '100px',
-                      right: '100px',
-                      bottom: '70px',
-                      background: '#333'
-                    }
-                  }}>
-                  <ReactPlayer
-                    width='100%'
-                    height='100%'
-                    controls
-                    url={`https://www.youtube.com/watch?v=${vidDetails.videoLoc}&t=13s`}
-                  />
-                  <div className='modal-info'>
-                    <button onClick={() => setModalOpen(false)}>close</button>
-                  </div>
-                </Modal>
-
                 <TrailerButton to={`/hermits/${vidDetails.hermit_owner_ID}`}>
                   <span>INFORMATION</span>
                 </TrailerButton>
@@ -83,7 +53,7 @@ function Detail() {
               <Description>{vidDetails.description}</Description>
             </VidLeft>
             <VidRight>
-              <RestHermits src={vidDetails.videoPreview} alt='' />
+              {/* trailer */}
               <RestDiv>
                 <Link to=''>
                   <img src={vidDetails.hermit01} alt='' />
@@ -185,11 +155,11 @@ const VidRight = styled.div`
   flex-direction: column;
 `;
 
-const RestHermits = styled.img`
-  width: 326px;
-  border-radius: 5px;
-  border: 4px solid var(--burnt);
-`;
+// const RestHermits = styled.img`
+//   width: 326px;
+//   border-radius: 5px;
+//   border: 4px solid var(--burnt);
+// `;
 
 const RestDiv = styled.div`
   display: flex;

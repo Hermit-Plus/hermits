@@ -1,15 +1,14 @@
+// ? import {device} for responsive css build
+
 import React from 'react';
 import PlayerCard from '../../components/playerCard';
 import useFetch from '../../hooks/useFetch';
 
 import styled from 'styled-components';
-import { device } from '../../responsive';
 
 function Players() {
   const {
-    data: players,
-    loading,
-    error
+    data: players // todo bring in loading and error
   } = useFetch('http://localhost:8001/players');
 
   return (
@@ -34,6 +33,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 6rem;
 
   &:before {
     background: url('/images/home-background-green.png') center center / cover
@@ -53,5 +53,5 @@ const Container = styled.div`
 const PlayerWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 1366px;
+  width: 900px;
 `;
