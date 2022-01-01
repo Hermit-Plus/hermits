@@ -109,6 +109,7 @@ export default Hermits;
 
 const Container = styled.div`
   min-height: 100vh;
+  margin-left: 6rem;
   padding: 70px calc(3.5vw + 5px);
   position: relative;
   overflow-x: hidden;
@@ -138,18 +139,16 @@ const Divide = styled.div`
   display: flex;
   grid-template-columns: 50% 50%;
   padding: 2rem;
-  width: 1366px;
-  //width: 90vw; // * old
+  width: calc(100vw - 0.5em);
+  // width: 90vw; // * old
   height: 75vh;
 
   h2 {
-    margin: 0.5rem 0;
     color: var(--text-main);
   }
 
   p {
     color: var(--text-main);
-    padding-top: 1rem;
   }
 
   a {
@@ -160,7 +159,7 @@ const Divide = styled.div`
 
 const Social = styled.div`
   display: flex;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-main);
 
   svg {
@@ -174,17 +173,19 @@ const Social = styled.div`
 
 const LeftDiv = styled.div`
   img {
+    width: 350px;
     margin-bottom: 1rem;
   }
 
   h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 1.2rem;
-    width: 900px;
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    width: 550px;
   }
 `;
 
@@ -206,7 +207,7 @@ const BtnWrap = styled.div`
 const Button = styled(Link)`
   font-family: 'Kanit', sans-serif;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.15rem;
   color: var(--light-yellow);
@@ -224,5 +225,5 @@ const Button = styled(Link)`
 
 const HermitSkin = styled.img`
   /* width: 270px; */
-  height: 360px;
+  height: 250px;
 `;
