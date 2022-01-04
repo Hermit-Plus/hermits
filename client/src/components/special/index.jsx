@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import { specials } from '../../data/videos';
+
+import { device } from '../../responsive';
 
 /**
  * This is a card for the different segments of hermits for seasons. Like the boat'em and big eye guys of season 8. This was jacked from video.js
@@ -50,7 +53,15 @@ const Content = styled.div`
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-gap: 10px;
   margin-bottom: 50px;
-  width: calc(100vw - 11rem);
+  max-width: calc(100vw - 11rem);
+
+  @media ${device.laptopM} {
+    width: 1366px;
+  }
+
+  @media ${device.laptop} {
+    width: 900px;
+  }
 `;
 
 const Wrap = styled.div`
@@ -77,6 +88,14 @@ const Wrap = styled.div`
     border-color: rgba(249, 249, 249, 0.8);
     box-shadow: rgb(0 75 0 / 80%) 0px 40px 58px -20px,
       rgb(0 50 0 / 72%) 0px 30px 22px -10px;
+  }
+
+  @media ${device.laptop} {
+    width: 210px;
+
+    img {
+      width: 210px;
+    }
   }
 `;
 
