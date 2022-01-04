@@ -4,7 +4,7 @@
 
 We all love the hermits and love the amazing things they do in Minecraft. This app is a celebration of them and endeavors to bring them all together in one place for you to enjoy. The look and feel is to mimic streaming services we all love, like Disney Plus or Netflix. My goal is to enhance the pleasure of watching the hermits, make it easier to follow the stories and characters, and help introduce new fans to new characters.
 
-![Hermit Plus](https://github.com/Hermit-Plus/hermits/tree/main/client/public/images/hermit-screenshot.png)
+![Hermit Plus](https://github.com/Hermit-Plus/hermits/blob/main/client/public/images/hermit-screenshot.png?raw=true)
 
 Hermit Plus has many phases of construction and is a work in progress. It will still be some time before just the basic app is up for consumption.
 
